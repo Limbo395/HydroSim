@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hydroacoustic Stations Installation</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="animations.js" defer></script>
+    <script src="auth.js" defer></script>
+    <script src="quiz.js" defer></script>
+</head>
+<body>
+    <div id="notification" class="notification"></div>
+    <nav>
+        <div class="nav-content">
+            <div class="tab active" onclick="selectTab('educationalMaterials')">Educational Materials</div>
+            <div class="tab" onclick="selectTab('video')">Video Materials</div>
+            <div class="tab" onclick="selectTab('tests')">Tests</div>
+        </div>
+        <div class="user-section">
+            <span id="username-display"></span>
+            <button onclick="logout()" class="logout-btn">Logout</button>
+        </div>
+    </nav>
+
+    <div id="auth-container" style="display: none;">
+        <div class="auth-box">
+            <form id="login-form" onsubmit="handleLogin(event)">
+                <h2>Login</h2>
+                <div class="form-group">
+                    <input type="text" id="login-username" placeholder="Username" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" id="login-password" placeholder="Password" required>
+                </div>
+                <button type="submit" class="auth-btn">Login</button>
+                <p class="auth-toggle">Don't have an account? <a href="#" onclick="toggleAuthForm()">Register</a></p>
+            </form>
+
+            <form id="register-form" style="display: none;" onsubmit="handleRegister(event)">
+                <h2>Register</h2>
+                <div class="form-group">
+                    <input type="text" id="register-username" placeholder="Username" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" id="register-password" placeholder="Password" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" id="register-confirm-password" placeholder="Confirm Password" required>
+                </div>
+                <button type="submit" class="auth-btn">Register</button>
+                <p class="auth-toggle">Already have an account? <a href="#" onclick="toggleAuthForm()">Login</a></p>
+            </form>
+        </div>
+    </div>
+    <div id="page-container">
+        <div id="main-content">
+            <!-- Educational Materials Content -->
+            <div id="educationalMaterials" class="content">
+                <!-- Stage 1 -->
+                <h2>Stage 1: Introduction to Hydroacoustic Stations</h2>
+                <p>Hydroacoustic stations are sophisticated systems designed to detect and monitor sounds in water. They play a crucial role in various applications, including scientific research, military surveillance, and environmental monitoring.</p>
+                <p><strong>Key Applications:</strong></p>
+                <ul>
+                    <li>Scientific Research: Provides valuable data for studying marine ecosystems and underwater phenomena.</li>
+                    <li>Military Use: Monitors underwater movements for security purposes.</li>
+                    <li>Environmental Monitoring: Tracks noise pollution and its impact on marine life.</li>
+                </ul>
+                <p><strong>Basic Principles of Hydroacoustics:</strong></p>
+                <ul>
+                    <li>Sound propagation in water differs significantly from that in air due to differences in density and pressure.</li>
+                    <li>Hydrophones, the core components, convert sound waves into electrical signals for analysis.</li>
+                </ul>
+                
+                <!-- Stage 2 -->
+                <h2>Stage 2: Planning the Installation</h2>
+                <p><strong>Site Selection Criteria:</strong></p>
+                <ul>
+                    <li>Environmental Factors: Consider water depth, temperature, and salinity.</li>
+                    <li>Proximity to Sources: Ensure the station is near the area of interest for optimal data collection.</li>
+                    <li>Regulatory Compliance: Obtain necessary permits and adhere to local regulations.</li>
+                </ul>
+                <p><strong>Preliminary Setup Plans:</strong></p>
+                <ul>
+                    <li>Mapping: Create detailed maps of the installation area.</li>
+                    <li>Cable Routing: Plan the route for cables to ensure they are secure and functional.</li>
+                    <li>Power Supply: Determine the power source and ensure it is reliable.</li>
+                </ul>
+                
+                <!-- Stage 3 -->
+                <h2>Stage 3: Assembling the Equipment</h2>
+                <p><strong>Components of a Hydroacoustic Station:</strong></p>
+                <ul>
+                    <li>Sensors (Hydrophones): Capture sound waves.</li>
+                    <li>Cables: Transmit data and power.</li>
+                    <li>Data Loggers: Store and process data.</li>
+                </ul>
+                <p><strong>Assembly Steps:</strong></p>
+                <ol>
+                    <li>Install Hydrophones: Securely mount hydrophones in the designated area.</li>
+                    <li>Connect Cables: Ensure all connections are watertight and secure.</li>
+                    <li>Set Up Data Loggers: Configure settings and test functionality.</li>
+                </ol>
+                <p><strong>Safety Precautions:</strong></p>
+                <ul>
+                    <li>Wear protective gear when handling equipment.</li>
+                    <li>Follow manufacturer guidelines for installation.</li>
+                </ul>
+                
+                <!-- Stage 4 -->
+                <h2>Stage 4: Deploying the Station</h2>
+                <p><strong>Installation Process:</strong></p>
+                <ul>
+                    <li>Lowering the Station: Use appropriate equipment to place the station in the water.</li>
+                    <li>Anchoring: Secure the station to prevent drift and ensure stability.</li>
+                    <li>Power and Data Connection: Establish connections to power sources and data transmission systems.</li>
+                </ul>
+                <p><strong>Troubleshooting:</strong></p>
+                <ul>
+                    <li>Signal Strength: Check for signal strength and data integrity.</li>
+                    <li>System Checks: Address any issues promptly to ensure operational efficiency.</li>
+                </ul>
+                
+                <!-- Stage 5 -->
+                <h2>Stage 5: Monitoring and Maintenance</h2>
+                <p><strong>Regular Checks:</strong></p>
+                <ul>
+                    <li>Data Analysis: Review data for anomalies and patterns.</li>
+                    <li>System Integrity: Inspect equipment for wear and tear.</li>
+                    <li>Calibration: Regularly calibrate sensors to maintain accuracy.</li>
+                </ul>
+                <p><strong>Maintenance Procedures:</strong></p>
+                <ul>
+                    <li>Cleaning: Remove marine growth from equipment to prevent interference.</li>
+                    <li>Component Replacement: Replace faulty parts immediately to ensure system reliability.</li>
+                    <li>Software Updates: Keep data logging software up to date for optimal performance.</li>
+                </ul>
+                <p><strong>Common Issues and Solutions:</strong></p>
+                <ul>
+                    <li>Signal Interference: Check for sources of interference and adjust equipment accordingly.</li>
+                    <li>Battery Life: Monitor battery levels and replace them as needed.</li>
+                    <li>Data Loss: Implement backup systems to prevent data loss.</li>
+                </ul>
+                
+                <!-- Summary -->
+                <h2>Summary</h2>
+                <p>By following these stages, you can successfully install and maintain a hydroacoustic station. Each stage is critical and requires careful planning and execution to ensure the station operates efficiently and provides accurate data.</p>
+            </div>
+            <!-- Video Content -->
+            <div id="video" class="content" style="display:none;">
+                <div class="content-container">
+                    <h2>Video Tutorials</h2>
+            
+                    <!-- Video 1: HA04 - Hydroacoustic Station Installation -->
+                    <div class="video-item">
+                        <h3>HA04 - Hydroacoustic Station Installation</h3>
+                        <iframe width="100%" height="315" src="https://www.youtube.com/embed/nPsOzfLFE9A" frameborder="0" allowfullscreen></iframe>
+                        <p>This video documents the installation of HA04, the last hydroacoustic station in the CTBT network, located in the Crozet Islands.</p>
+                    </div>
+            
+                    <!-- Video 2: HA04 - CTBTO's Last Hydroacoustic Station -->
+                    <div class="video-item">
+                        <h3>HA04 - CTBTO's Last Hydroacoustic Station</h3>
+                        <iframe width="100%" height="315" src="https://www.youtube.com/embed/nPsOzfLFE9A" frameborder="0" allowfullscreen></iframe>
+                        <p>Learn about the significance of HA04 in completing the CTBT's hydroacoustic network.</p>
+                    </div>
+            
+                    <!-- Video 3: CTBTO Media Packages -->
+                    <div class="video-item">
+                        <h3>CTBTO Media Packages</h3>
+                        <iframe width="100%" height="315" src="https://www.youtube.com/embed/your_video_id_3" frameborder="0" allowfullscreen></iframe>
+                        <p>Explore a collection of media resources, including videos of hydroacoustic station installations and operations.</p>
+                    </div>
+            
+                    <!-- Video 4: Completing the Hydroacoustic Network – Installation of HA04 -->
+                    <div class="video-item">
+                        <h3>Completing the Hydroacoustic Network – Installation of HA04</h3>
+                        <iframe width="100%" height="315" src="https://www.youtube.com/embed/your_video_id_4" frameborder="0" allowfullscreen></iframe>
+                        <p>Watch the installation of HA04, the final hydroacoustic station in the CTBT network, completed in 2016.</p>
+                    </div>
+            
+                    <!-- Video 5: Crozet Islands: Installing Our Last Hydroacoustic Station -->
+                    <div class="video-item">
+                        <h3>Crozet Islands: Installing Our Last Hydroacoustic Station</h3>
+                        <iframe width="100%" height="315" src="https://www.youtube.com/embed/your_video_id_5" frameborder="0" allowfullscreen></iframe>
+                        <p>This video provides insights into the installation process of HA04 in the Crozet Islands.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Tests Content -->
+            <div id="tests" class="content" style="display:none;">
+                <div class="content-container">
+                    <h2>Knowledge Assessment</h2>
+                    <div class="quiz-progress">
+                        <div class="quiz-progress-bar" style="width: 0%"></div>
+                    </div>
+                    <div class="quiz-status">
+                        <span class="quiz-counter">Question 1 of 9</span>
+                        <div class="quiz-timer">Time remaining: 15:00</div>
+                    </div>
+
+                    <div id="test1" class="quiz-section">
+                        <h3>Understanding Hydroacoustic Stations</h3>
+                        <p>What is the primary function of hydroacoustic stations?</p>
+                        <div class="quiz-options">
+                            <div class="quiz-option">
+                                <input type="radio" name="q1" id="q1a" value="a">
+                                <label for="q1a">To monitor underwater sounds and movements</label>
+                            </div>
+                            <div class="quiz-option">
+                                <input type="radio" name="q1" id="q1b" value="b">
+                                <label for="q1b">To generate electricity from water movement</label>
+                            </div>
+                            <div class="quiz-option">
+                                <input type="radio" name="q1" id="q1c" value="c">
+                                <label for="q1c">To purify ocean water</label>
+                            </div>
+                            <div class="quiz-option">
+                                <input type="radio" name="q1" id="q1d" value="d">
+                                <label for="q1d">To measure water temperature</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="test2" class="quiz-section" style="display: none;">
+                        <h3>Installation Planning</h3>
+                        <p>Which factor is most critical when selecting a site for hydroacoustic station installation?</p>
+                        <div class="quiz-options">
+                            <div class="quiz-option">
+                                <input type="radio" name="q2" id="q2a" value="a">
+                                <label for="q2a">Water depth and temperature conditions</label>
+                            </div>
+                            <div class="quiz-option">
+                                <input type="radio" name="q2" id="q2b" value="b">
+                                <label for="q2b">Proximity to shipping lanes</label>
+                            </div>
+                            <div class="quiz-option">
+                                <input type="radio" name="q2" id="q2c" value="c">
+                                <label for="q2c">Local wildlife population</label>
+                            </div>
+                            <div class="quiz-option">
+                                <input type="radio" name="q2" id="q2d" value="d">
+                                <label for="q2d">Tourist activity in the area</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="quiz-navigation">
+                        <button class="quiz-btn prev" onclick="prevQuestion()" disabled>Previous</button>
+                        <button class="quiz-btn next" onclick="nextQuestion()">Next</button>
+                    </div>
+
+                    <button class="quiz-submit" onclick="submitQuiz()">Submit Quiz</button>
+                </div>
+            </div>
+            
+            <!-- Modal for Quiz Results -->
+            <div id="quiz-results-modal" class="modal">
+                <div class="modal-content">
+                    <span class="close" onclick="closeModal()">&times;</span>
+                    <p id="quiz-results-text"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal for quiz results -->
+    <div id="quiz-results-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <p id="quiz-results-text"></p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
