@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hydroacoustic Stations Installation</title>
+    <title>Інтерактивний додаток для вивчення встановлення гідроакустичних станцій</title>
     <link rel="stylesheet" href="styles.css">
     <script src="animations.js" defer></script>
     <script src="auth.js" defer></script>
@@ -13,261 +13,443 @@
     <div id="notification" class="notification"></div>
     <nav>
         <div class="nav-content">
-            <div class="tab active" onclick="selectTab('educationalMaterials')">Educational Materials</div>
-            <div class="tab" onclick="selectTab('video')">Video Materials</div>
-            <div class="tab" onclick="selectTab('tests')">Tests</div>
+            <div class="tab active" onclick="selectTab('educationalMaterials')">Навчальні матеріали</div>
+            <div class="tab" onclick="selectTab('video')">Відеоматеріали</div>
+            <div class="tab" onclick="selectTab('tests')">Тести</div>
         </div>
         <div class="user-section">
             <span id="username-display"></span>
-            <button onclick="logout()" class="logout-btn">Logout</button>
+            <button onclick="logout()" class="logout-btn">Вийти</button>
         </div>
     </nav>
 
     <div id="auth-container" style="display: none;">
         <div class="auth-box">
             <form id="login-form" onsubmit="handleLogin(event)">
-                <h2>Login</h2>
+                <h2>Вхід</h2>
                 <div class="form-group">
-                    <input type="text" id="login-username" placeholder="Username" required>
+                    <input type="text" id="login-username" placeholder="Логін" required>
                 </div>
                 <div class="form-group">
-                    <input type="password" id="login-password" placeholder="Password" required>
+                    <input type="password" id="login-password" placeholder="Пароль" required>
                 </div>
-                <button type="submit" class="auth-btn">Login</button>
-                <p class="auth-toggle">Don't have an account? <a href="#" onclick="toggleAuthForm()">Register</a></p>
+                <button type="submit" class="auth-btn">Увійти</button>
+                <p class="auth-toggle">Немає облікового запису? <a href="#" onclick="toggleAuthForm()">Зареєструватися</a></p>
             </form>
 
             <form id="register-form" style="display: none;" onsubmit="handleRegister(event)">
-                <h2>Register</h2>
+                <h2>Реєстрація</h2>
                 <div class="form-group">
-                    <input type="text" id="register-username" placeholder="Username" required>
+                    <input type="text" id="register-username" placeholder="Логін" required>
                 </div>
                 <div class="form-group">
-                    <input type="password" id="register-password" placeholder="Password" required>
+                    <input type="password" id="register-password" placeholder="Пароль" required>
                 </div>
                 <div class="form-group">
-                    <input type="password" id="register-confirm-password" placeholder="Confirm Password" required>
+                    <input type="password" id="register-confirm-password" placeholder="Підтвердіть пароль" required>
                 </div>
-                <button type="submit" class="auth-btn">Register</button>
-                <p class="auth-toggle">Already have an account? <a href="#" onclick="toggleAuthForm()">Login</a></p>
+                <button type="submit" class="auth-btn">Зареєструватися</button>
+                <p class="auth-toggle">Вже є обліковий запис? <a href="#" onclick="toggleAuthForm()">Увійти</a></p>
             </form>
         </div>
     </div>
     <div id="page-container">
         <div id="main-content">
-            <!-- Educational Materials Content -->
+            <!-- Навчальні матеріали -->
             <div id="educationalMaterials" class="content">
-                <!-- Stage 1 -->
-                <h2>Stage 1: Introduction to Hydroacoustic Stations</h2>
-                <p>Hydroacoustic stations are sophisticated systems designed to detect and monitor sounds in water. They play a crucial role in various applications, including scientific research, military surveillance, and environmental monitoring.</p>
-                <p><strong>Key Applications:</strong></p>
+                <!-- Етап 1 -->
+                <h2>Етап 1: Вступ до гідроакустичних станцій</h2>
+                <p>Гідроакустичні станції — це складні системи, призначені для виявлення та моніторингу звуків у воді. Вони відіграють важливу роль у різних сферах, включаючи наукові дослідження, військове спостереження та екологічний моніторинг.</p>
+                <p><strong>Основні сфери застосування:</strong></p>
                 <ul>
-                    <li>Scientific Research: Provides valuable data for studying marine ecosystems and underwater phenomena.</li>
-                    <li>Military Use: Monitors underwater movements for security purposes.</li>
-                    <li>Environmental Monitoring: Tracks noise pollution and its impact on marine life.</li>
+                    <li>Наукові дослідження: Забезпечують цінні дані для вивчення морських екосистем та підводних явищ.</li>
+                    <li>Військове використання: Моніторять підводні рухи для забезпечення безпеки.</li>
+                    <li>Екологічний моніторинг: Відстежують шумове забруднення та його вплив на морську фауну.</li>
                 </ul>
-                <p><strong>Basic Principles of Hydroacoustics:</strong></p>
+                <p><strong>Основні принципи гідроакустики:</strong></p>
                 <ul>
-                    <li>Sound propagation in water differs significantly from that in air due to differences in density and pressure.</li>
-                    <li>Hydrophones, the core components, convert sound waves into electrical signals for analysis.</li>
+                    <li>Поширення звуку у воді значно відрізняється від поширення у повітрі через різницю в щільності та тиску.</li>
+                    <li>Гідрофони, основні компоненти, перетворюють звукові хвилі на електричні сигнали для аналізу.</li>
                 </ul>
-                
-                <!-- Stage 2 -->
-                <h2>Stage 2: Planning the Installation</h2>
-                <p><strong>Site Selection Criteria:</strong></p>
+
+                <!-- Етап 2 -->
+                <h2>Етап 2: Планування встановлення</h2>
+                <p><strong>Критерії вибору місця:</strong></p>
                 <ul>
-                    <li>Environmental Factors: Consider water depth, temperature, and salinity.</li>
-                    <li>Proximity to Sources: Ensure the station is near the area of interest for optimal data collection.</li>
-                    <li>Regulatory Compliance: Obtain necessary permits and adhere to local regulations.</li>
+                    <li>Екологічні фактори: Враховуйте глибину води, температуру та солоність.</li>
+                    <li>Близькість до джерел: Забезпечте розташування станції поблизу зони інтересу для оптимального збору даних.</li>
+                    <li>Дотримання нормативів: Отримайте необхідні дозволи та дотримуйтесь місцевих норм.</li>
                 </ul>
-                <p><strong>Preliminary Setup Plans:</strong></p>
+                <p><strong>Попередній план установки:</strong></p>
                 <ul>
-                    <li>Mapping: Create detailed maps of the installation area.</li>
-                    <li>Cable Routing: Plan the route for cables to ensure they are secure and functional.</li>
-                    <li>Power Supply: Determine the power source and ensure it is reliable.</li>
+                    <li>Картографування: Створіть детальні карти зони встановлення.</li>
+                    <li>Прокладання кабелів: Заплануйте маршрут кабелів для забезпечення їх надійності та функціональності.</li>
+                    <li>Джерело живлення: Визначте джерело енергії та забезпечте його стабільність.</li>
                 </ul>
-                
-                <!-- Stage 3 -->
-                <h2>Stage 3: Assembling the Equipment</h2>
-                <p><strong>Components of a Hydroacoustic Station:</strong></p>
+
+                <!-- Етап 3 -->
+                <h2>Етап 3: Збірка обладнання</h2>
+                <p><strong>Компоненти гідроакустичної станції:</strong></p>
                 <ul>
-                    <li>Sensors (Hydrophones): Capture sound waves.</li>
-                    <li>Cables: Transmit data and power.</li>
-                    <li>Data Loggers: Store and process data.</li>
+                    <li>Датчики (гідрофони): Фіксують звукові хвилі.</li>
+                    <li>Кабелі: Передають дані та енергію.</li>
+                    <li>Реєстратори даних: Зберігають та обробляють інформацію.</li>
                 </ul>
-                <p><strong>Assembly Steps:</strong></p>
+                <p><strong>Етапи збірки:</strong></p>
                 <ol>
-                    <li>Install Hydrophones: Securely mount hydrophones in the designated area.</li>
-                    <li>Connect Cables: Ensure all connections are watertight and secure.</li>
-                    <li>Set Up Data Loggers: Configure settings and test functionality.</li>
+                    <li>Встановлення гідрофонів: Надійно закріпіть гідрофони у визначеній зоні.</li>
+                    <li>Підключення кабелів: Забезпечте герметичність та надійність з'єднань.</li>
+                    <li>Налаштування реєстраторів даних: Налаштуйте параметри та перевірте функціональність.</li>
                 </ol>
-                <p><strong>Safety Precautions:</strong></p>
+                <p><strong>Заходи безпеки:</strong></p>
                 <ul>
-                    <li>Wear protective gear when handling equipment.</li>
-                    <li>Follow manufacturer guidelines for installation.</li>
+                    <li>Використовуйте захисне обладнання під час роботи з обладнанням.</li>
+                    <li>Дотримуйтесь інструкцій виробника для встановлення.</li>
                 </ul>
-                
-                <!-- Stage 4 -->
-                <h2>Stage 4: Deploying the Station</h2>
-                <p><strong>Installation Process:</strong></p>
+
+                <!-- Етап 4 -->
+                <h2>Етап 4: Встановлення станції</h2>
+                <p><strong>Процес встановлення:</strong></p>
                 <ul>
-                    <li>Lowering the Station: Use appropriate equipment to place the station in the water.</li>
-                    <li>Anchoring: Secure the station to prevent drift and ensure stability.</li>
-                    <li>Power and Data Connection: Establish connections to power sources and data transmission systems.</li>
+                    <li>Опускання станції: Використовуйте відповідне обладнання для розміщення станції у воді.</li>
+                    <li>Закріплення: Забезпечте стабільність станції, щоб уникнути зносу.</li>
+                    <li>Підключення живлення та передачі даних: Встановіть з'єднання з джерелами енергії та системами передачі даних.</li>
                 </ul>
-                <p><strong>Troubleshooting:</strong></p>
+                <p><strong>Виявлення та усунення несправностей:</strong></p>
                 <ul>
-                    <li>Signal Strength: Check for signal strength and data integrity.</li>
-                    <li>System Checks: Address any issues promptly to ensure operational efficiency.</li>
+                    <li>Сила сигналу: Перевірте якість сигналу та цілісність даних.</li>
+                    <li>Перевірка системи: Усуньте будь-які проблеми для забезпечення ефективної роботи.</li>
                 </ul>
-                
-                <!-- Stage 5 -->
-                <h2>Stage 5: Monitoring and Maintenance</h2>
-                <p><strong>Regular Checks:</strong></p>
+
+                <!-- Етап 5 -->
+                <h2>Етап 5: Моніторинг та обслуговування</h2>
+                <p><strong>Регулярні перевірки:</strong></p>
                 <ul>
-                    <li>Data Analysis: Review data for anomalies and patterns.</li>
-                    <li>System Integrity: Inspect equipment for wear and tear.</li>
-                    <li>Calibration: Regularly calibrate sensors to maintain accuracy.</li>
+                    <li>Аналіз даних: Перевіряйте дані на наявність аномалій та закономірностей.</li>
+                    <li>Цілісність системи: Перевіряйте обладнання на знос та пошкодження.</li>
+                    <li>Калібрування: Регулярно калібруйте датчики для підтримки точності.</li>
                 </ul>
-                <p><strong>Maintenance Procedures:</strong></p>
+                <p><strong>Процедури обслуговування:</strong></p>
                 <ul>
-                    <li>Cleaning: Remove marine growth from equipment to prevent interference.</li>
-                    <li>Component Replacement: Replace faulty parts immediately to ensure system reliability.</li>
-                    <li>Software Updates: Keep data logging software up to date for optimal performance.</li>
+                    <li>Очищення: Видаляйте морські нарости з обладнання, щоб уникнути перешкод.</li>
+                    <li>Заміна компонентів: Негайно замінюйте несправні частини для забезпечення надійності системи.</li>
+                    <li>Оновлення програмного забезпечення: Підтримуйте актуальність програмного забезпечення для оптимальної роботи.</li>
                 </ul>
-                <p><strong>Common Issues and Solutions:</strong></p>
+                <p><strong>Поширені проблеми та їх вирішення:</strong></p>
                 <ul>
-                    <li>Signal Interference: Check for sources of interference and adjust equipment accordingly.</li>
-                    <li>Battery Life: Monitor battery levels and replace them as needed.</li>
-                    <li>Data Loss: Implement backup systems to prevent data loss.</li>
+                    <li>Перешкоди сигналу: Перевірте джерела перешкод та налаштуйте обладнання.</li>
+                    <li>Тривалість роботи батарей: Слідкуйте за рівнем заряду батарей та замінюйте їх за необхідності.</li>
+                    <li>Втрата даних: Використовуйте резервні системи для запобігання втраті даних.</li>
                 </ul>
-                
-                <!-- Summary -->
-                <h2>Summary</h2>
-                <p>By following these stages, you can successfully install and maintain a hydroacoustic station. Each stage is critical and requires careful planning and execution to ensure the station operates efficiently and provides accurate data.</p>
+
+                <!-- Підсумок -->
+                <h2>Підсумок</h2>
+                <p>Дотримуючись цих етапів, ви зможете успішно встановити та обслуговувати гідроакустичну станцію. Кожен етап є важливим і вимагає ретельного планування та виконання для забезпечення ефективної роботи станції та отримання точних даних.</p>
             </div>
-            <!-- Video Content -->
+
+            <!-- Відеоматеріали -->
             <div id="video" class="content" style="display:none;">
                 <div class="content-container">
-                    <h2>Video Tutorials</h2>
-            
-                    <!-- Video 1: HA04 - Hydroacoustic Station Installation -->
+                    <h2>Відеоуроки</h2>
+
+                    <!-- Відео 1 -->
                     <div class="video-item">
-                        <h3>HA04 - Hydroacoustic Station Installation</h3>
+                        <h3>Трейлер до станції HA04</h3>
+                        <iframe width="100%" height="315" src="https://www.youtube.com/embed/Az9460J6h-0" frameborder="0" allowfullscreen></iframe>
+                        <p>У цьому відео ви ознайомитесь з станцією та експедицією встановлення.</p>
+                    </div>
+
+                    <!-- Відео 2 -->
+                    <div class="video-item">
+                        <h3>HA04 — остання гідроакустична станція CTBTO</h3>
                         <iframe width="100%" height="315" src="https://www.youtube.com/embed/nPsOzfLFE9A" frameborder="0" allowfullscreen></iframe>
-                        <p>This video documents the installation of HA04, the last hydroacoustic station in the CTBT network, located in the Crozet Islands.</p>
+                        <p>Це відео документує встановлення HA04, останньої гідроакустичної станції в мережі CTBT, розташованої на островах Крозе.</p>
                     </div>
-            
-                    <!-- Video 2: HA04 - CTBTO's Last Hydroacoustic Station -->
+
+                    <!-- Відео 3 -->
                     <div class="video-item">
-                        <h3>HA04 - CTBTO's Last Hydroacoustic Station</h3>
-                        <iframe width="100%" height="315" src="https://www.youtube.com/embed/nPsOzfLFE9A" frameborder="0" allowfullscreen></iframe>
-                        <p>Learn about the significance of HA04 in completing the CTBT's hydroacoustic network.</p>
+                        <h3>Медіаресурси CTBTO</h3>
+                        <iframe width="100%" height="315" src="https://www.youtube.com/embed/Pxa9h2iK7ng" frameborder="0" allowfullscreen></iframe>
+                        <p>Відео про встановлення гідроакустичної станції на островах Крозе для виявлення підводних ядерних випробувань.</p>
                     </div>
-            
-                    <!-- Video 3: CTBTO Media Packages -->
+
+                    <!-- Відео 4 -->
                     <div class="video-item">
-                        <h3>CTBTO Media Packages</h3>
-                        <iframe width="100%" height="315" src="https://www.youtube.com/embed/your_video_id_3" frameborder="0" allowfullscreen></iframe>
-                        <p>Explore a collection of media resources, including videos of hydroacoustic station installations and operations.</p>
-                    </div>
-            
-                    <!-- Video 4: Completing the Hydroacoustic Network – Installation of HA04 -->
-                    <div class="video-item">
-                        <h3>Completing the Hydroacoustic Network – Installation of HA04</h3>
-                        <iframe width="100%" height="315" src="https://www.youtube.com/embed/your_video_id_4" frameborder="0" allowfullscreen></iframe>
-                        <p>Watch the installation of HA04, the final hydroacoustic station in the CTBT network, completed in 2016.</p>
-                    </div>
-            
-                    <!-- Video 5: Crozet Islands: Installing Our Last Hydroacoustic Station -->
-                    <div class="video-item">
-                        <h3>Crozet Islands: Installing Our Last Hydroacoustic Station</h3>
-                        <iframe width="100%" height="315" src="https://www.youtube.com/embed/your_video_id_5" frameborder="0" allowfullscreen></iframe>
-                        <p>This video provides insights into the installation process of HA04 in the Crozet Islands.</p>
+                        <h3>У КПІ створили прилад для охорони водного простору</h3>
+                        <iframe width="100%" height="315" src="https://www.youtube.com/embed/N8ugd5aJjLE" frameborder="0" allowfullscreen></iframe>
+                        <p>Нова розробка політехніків – гідроакустична станція. Це – «вуха» для відстеження надводних і підводних човнів. Систему можна використовувати для створення охоронних систем морських акваторій, портів, морських кордонів, сейсмічної поведінки морського дна.Задля охорони всієї берегової лінії України потрібно 16–18 таких систем на відстані 10–11 км від берега.</p>
                     </div>
                 </div>
             </div>
-            <!-- Tests Content -->
+
+            <!-- Тести -->
             <div id="tests" class="content" style="display:none;">
                 <div class="content-container">
-                    <h2>Knowledge Assessment</h2>
+                    <h2>Перевірка знань</h2>
                     <div class="quiz-progress">
                         <div class="quiz-progress-bar" style="width: 0%"></div>
                     </div>
                     <div class="quiz-status">
-                        <span class="quiz-counter">Question 1 of 9</span>
-                        <div class="quiz-timer">Time remaining: 15:00</div>
+                        <span class="quiz-counter">Питання 1 з 10</span>
+                        <div class="quiz-timer">Час, що залишився: 15:00</div>
                     </div>
 
+                    <!-- Тест 1 -->
                     <div id="test1" class="quiz-section">
-                        <h3>Understanding Hydroacoustic Stations</h3>
-                        <p>What is the primary function of hydroacoustic stations?</p>
+                        <h3>Розуміння гідроакустичних станцій</h3>
+                        <p>Яка основна функція гідроакустичних станцій?</p>
                         <div class="quiz-options">
                             <div class="quiz-option">
                                 <input type="radio" name="q1" id="q1a" value="a">
-                                <label for="q1a">To monitor underwater sounds and movements</label>
+                                <label for="q1a">Моніторинг підводних звуків та рухів</label>
                             </div>
                             <div class="quiz-option">
                                 <input type="radio" name="q1" id="q1b" value="b">
-                                <label for="q1b">To generate electricity from water movement</label>
+                                <label for="q1b">Генерація електроенергії з руху води</label>
                             </div>
                             <div class="quiz-option">
                                 <input type="radio" name="q1" id="q1c" value="c">
-                                <label for="q1c">To purify ocean water</label>
+                                <label for="q1c">Очищення океанічної води</label>
                             </div>
                             <div class="quiz-option">
                                 <input type="radio" name="q1" id="q1d" value="d">
-                                <label for="q1d">To measure water temperature</label>
+                                <label for="q1d">Вимірювання температури води</label>
                             </div>
                         </div>
                     </div>
 
+                    <!-- Тест 2 -->
                     <div id="test2" class="quiz-section" style="display: none;">
-                        <h3>Installation Planning</h3>
-                        <p>Which factor is most critical when selecting a site for hydroacoustic station installation?</p>
+                        <h3>Планування встановлення</h3>
+                        <p>Який фактор є найважливішим при виборі місця для встановлення гідроакустичної станції?</p>
                         <div class="quiz-options">
                             <div class="quiz-option">
                                 <input type="radio" name="q2" id="q2a" value="a">
-                                <label for="q2a">Water depth and temperature conditions</label>
+                                <label for="q2a">Глибина води та температурні умови</label>
                             </div>
                             <div class="quiz-option">
                                 <input type="radio" name="q2" id="q2b" value="b">
-                                <label for="q2b">Proximity to shipping lanes</label>
+                                <label for="q2b">Близькість до судноплавних шляхів</label>
                             </div>
                             <div class="quiz-option">
                                 <input type="radio" name="q2" id="q2c" value="c">
-                                <label for="q2c">Local wildlife population</label>
+                                <label for="q2c">Місцева популяція тварин</label>
                             </div>
                             <div class="quiz-option">
                                 <input type="radio" name="q2" id="q2d" value="d">
-                                <label for="q2d">Tourist activity in the area</label>
+                                <label for="q2d">Туристична активність у регіоні</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Тест 3 -->
+                    <div id="test3" class="quiz-section" style="display: none;">
+                        <h3>Збірка обладнання</h3>
+                        <p>Який компонент є основним у гідроакустичній станції?</p>
+                        <div class="quiz-options">
+                            <div class="quiz-option">
+                                <input type="radio" name="q3" id="q3a" value="a">
+                                <label for="q3a">Гідрофони</label>
+                            </div>
+                            <div class="quiz-option">
+                                <input type="radio" name="q3" id="q3b" value="b">
+                                <label for="q3b">Кабелі</label>
+                            </div>
+                            <div class="quiz-option">
+                                <input type="radio" name="q3" id="q3c" value="c">
+                                <label for="q3c">Реєстратори даних</label>
+                            </div>
+                            <div class="quiz-option">
+                                <input type="radio" name="q3" id="q3d" value="d">
+                                <label for="q3d">Джерела живлення</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Тест 4 -->
+                    <div id="test4" class="quiz-section" style="display: none;">
+                        <h3>Встановлення станції</h3>
+                        <p>Який крок є першим у процесі встановлення гідроакустичної станції?</p>
+                        <div class="quiz-options">
+                            <div class="quiz-option">
+                                <input type="radio" name="q4" id="q4a" value="a">
+                                <label for="q4a">Опускання станції у воду</label>
+                            </div>
+                            <div class="quiz-option">
+                                <input type="radio" name="q4" id="q4b" value="b">
+                                <label for="q4b">Закріплення станції</label>
+                            </div>
+                            <div class="quiz-option">
+                                <input type="radio" name="q4" id="q4c" value="c">
+                                <label for="q4c">Підключення живлення</label>
+                            </div>
+                            <div class="quiz-option">
+                                <input type="radio" name="q4" id="q4d" value="d">
+                                <label for="q4d">Налаштування реєстраторів даних</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Тест 5 -->
+                    <div id="test5" class="quiz-section" style="display: none;">
+                        <h3>Моніторинг та обслуговування</h3>
+                        <p>Як часто слід калібрувати датчики гідроакустичної станції?</p>
+                        <div class="quiz-options">
+                            <div class="quiz-option">
+                                <input type="radio" name="q5" id="q5a" value="a">
+                                <label for="q5a">Щомісяця</label>
+                            </div>
+                            <div class="quiz-option">
+                                <input type="radio" name="q5" id="q5b" value="b">
+                                <label for="q5b">Щокварталу</label>
+                            </div>
+                            <div class="quiz-option">
+                                <input type="radio" name="q5" id="q5c" value="c">
+                                <label for="q5c">Щороку</label>
+                            </div>
+                            <div class="quiz-option">
+                                <input type="radio" name="q5" id="q5d" value="d">
+                                <label for="q5d">За необхідності</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Тест 6 -->
+                    <div id="test6" class="quiz-section" style="display: none;">
+                        <h3>Екологічний моніторинг</h3>
+                        <p>Яку роль відіграють гідроакустичні станції в екологічному моніторингу?</p>
+                        <div class="quiz-options">
+                            <div class="quiz-option">
+                                <input type="radio" name="q6" id="q6a" value="a">
+                                <label for="q6a">Відстеження шумового забруднення</label>
+                            </div>
+                            <div class="quiz-option">
+                                <input type="radio" name="q6" id="q6b" value="b">
+                                <label for="q6b">Вимірювання температури води</label>
+                            </div>
+                            <div class="quiz-option">
+                                <input type="radio" name="q6" id="q6c" value="c">
+                                <label for="q6c">Контроль солоності води</label>
+                            </div>
+                            <div class="quiz-option">
+                                <input type="radio" name="q6" id="q6d" value="d">
+                                <label for="q6d">Дослідження морських течій</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Тест 7 -->
+                    <div id="test7" class="quiz-section" style="display: none;">
+                        <h3>Військове використання</h3>
+                        <p>Яку функцію виконують гідроакустичні станції у військовій сфері?</p>
+                        <div class="quiz-options">
+                            <div class="quiz-option">
+                                <input type="radio" name="q7" id="q7a" value="a">
+                                <label for="q7a">Моніторинг підводних рухів</label>
+                            </div>
+                            <div class="quiz-option">
+                                <input type="radio" name="q7" id="q7b" value="b">
+                                <label for="q7b">Визначення місць для підводних баз</label>
+                            </div>
+                            <div class="quiz-option">
+                                <input type="radio" name="q7" id="q7c" value="c">
+                                <label for="q7c">Дослідження морської фауни</label>
+                            </div>
+                            <div class="quiz-option">
+                                <input type="radio" name="q7" id="q7d" value="d">
+                                <label for="q7d">Контроль якості води</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Тест 8 -->
+                    <div id="test8" class="quiz-section" style="display: none;">
+                        <h3>Наукові дослідження</h3>
+                        <p>Які дані збирають гідроакустичні станції для наукових досліджень?</p>
+                        <div class="quiz-options">
+                            <div class="quiz-option">
+                                <input type="radio" name="q8" id="q8a" value="a">
+                                <label for="q8a">Звукові хвилі та їх характеристики</label>
+                            </div>
+                            <div class="quiz-option">
+                                <input type="radio" name="q8" id="q8b" value="b">
+                                <label for="q8b">Температура та солоність води</label>
+                            </div>
+                            <div class="quiz-option">
+                                <input type="radio" name="q8" id="q8c" value="c">
+                                <label for="q8c">Швидкість морських течій</label>
+                            </div>
+                            <div class="quiz-option">
+                                <input type="radio" name="q8" id="q8d" value="d">
+                                <label for="q8d">Всі перелічені вище</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Тест 9 -->
+                    <div id="test9" class="quiz-section" style="display: none;">
+                        <h3>Безпека під час встановлення</h3>
+                        <p>Які заходи безпеки слід дотримувати під час встановлення гідроакустичної станції?</p>
+                        <div class="quiz-options">
+                            <div class="quiz-option">
+                                <input type="radio" name="q9" id="q9a" value="a">
+                                <label for="q9a">Використання захисного обладнання</label>
+                            </div>
+                            <div class="quiz-option">
+                                <input type="radio" name="q9" id="q9b" value="b">
+                                <label for="q9b">Дотримання інструкцій виробника</label>
+                            </div>
+                            <div class="quiz-option">
+                                <input type="radio" name="q9" id="q9c" value="c">
+                                <label for="q9c">Перевірка обладнання перед встановленням</label>
+                            </div>
+                            <div class="quiz-option">
+                                <input type="radio" name="q9" id="q9d" value="d">
+                                <label for="q9d">Всі перелічені вище</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Тест 10 -->
+                    <div id="test10" class="quiz-section" style="display: none;">
+                        <h3>Обслуговування станції</h3>
+                        <p>Які дії необхідно виконувати для підтримки роботи гідроакустичної станції?</p>
+                        <div class="quiz-options">
+                            <div class="quiz-option">
+                                <input type="radio" name="q10" id="q10a" value="a">
+                                <label for="q10a">Регулярне очищення обладнання</label>
+                            </div>
+                            <div class="quiz-option">
+                                <input type="radio" name="q10" id="q10b" value="b">
+                                <label for="q10b">Заміна несправних компонентів</label>
+                            </div>
+                            <div class="quiz-option">
+                                <input type="radio" name="q10" id="q10c" value="c">
+                                <label for="q10c">Оновлення програмного забезпечення</label>
+                            </div>
+                            <div class="quiz-option">
+                                <input type="radio" name="q10" id="q10d" value="d">
+                                <label for="q10d">Всі перелічені вище</label>
                             </div>
                         </div>
                     </div>
 
                     <div class="quiz-navigation">
-                        <button class="quiz-btn prev" onclick="prevQuestion()" disabled>Previous</button>
-                        <button class="quiz-btn next" onclick="nextQuestion()">Next</button>
+                        <button class="quiz-btn prev" onclick="prevQuestion()" disabled>Попереднє</button>
+                        <button class="quiz-btn next" onclick="nextQuestion()">Наступне</button>
                     </div>
 
-                    <button class="quiz-submit" onclick="submitQuiz()">Submit Quiz</button>
+                    <button class="quiz-submit" onclick="submitQuiz()">Завершити тест</button>
                 </div>
             </div>
-            
-            <!-- Modal for Quiz Results -->
+
+            <!-- Модальне вікно для результатів тесту -->
             <div id="quiz-results-modal" class="modal">
                 <div class="modal-content">
                     <span class="close" onclick="closeModal()">&times;</span>
                     <p id="quiz-results-text"></p>
                 </div>
             </div>
-        </div>
-    </div>
-    <!-- Modal for quiz results -->
-    <div id="quiz-results-modal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal()">&times;</span>
-            <p id="quiz-results-text"></p>
         </div>
     </div>
     <script src="script.js"></script>
