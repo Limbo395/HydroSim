@@ -1,9 +1,9 @@
 let currentQuestion = 1;
-const totalQuestions = 9;
+const totalQuestions = 10;
 let timer;
-let timeLeft = 900; // 15 minutes in seconds
+let timeLeft = 900; 
 
-// Initialize quiz when switching to tests tab
+// Ініціалізація тесту при перемиканні на вкладку "Тести"
 function initializeQuiz() {
     if (document.getElementById('tests').style.display !== 'none') {
         startQuiz();
@@ -36,7 +36,7 @@ function updateTimer() {
     const timerElement = document.querySelector('.quiz-timer');
     if (timerElement) {
         timerElement.textContent = 
-            `Time remaining: ${minutes}:${seconds.toString().padStart(2, '0')}`;
+            `Час, що залишився: ${minutes}:${seconds.toString().padStart(2, '0')}`;
     }
 }
 
@@ -44,25 +44,25 @@ function updateProgress() {
     const progressBar = document.querySelector('.quiz-progress-bar');
     const counter = document.querySelector('.quiz-counter');
     if (progressBar && counter) {
-        const progress = ((currentQuestion - 1) / totalQuestions) * 100;
+        const progress = (currentQuestion / totalQuestions) * 100;
         progressBar.style.width = `${progress}%`;
-        counter.textContent = `Question ${currentQuestion} of ${totalQuestions}`;
+        counter.textContent = `Питання ${currentQuestion} з ${totalQuestions}`;
     }
 }
 
 function showCurrentQuestion() {
-    // Hide all questions
+    // Приховати всі питання
     document.querySelectorAll('.quiz-section').forEach(section => {
         section.style.display = 'none';
     });
     
-    // Show current question
+    // Показати поточне питання
     const currentSection = document.getElementById(`test${currentQuestion}`);
     if (currentSection) {
         currentSection.style.display = 'block';
     }
     
-    // Update navigation buttons
+    // Оновити кнопки навігації
     updateNavigationButtons();
 }
 
@@ -106,6 +106,7 @@ function animateTransition(direction) {
 }
 
 function submitQuiz() {
+    console.log("Функція submitQuiz викликана!");
     clearInterval(timer);
     
     const answers = [];
@@ -119,26 +120,29 @@ function submitQuiz() {
 }
 
 function calculateScore(answers) {
-    const correctAnswers = ['a', 'a', 'b', 'c', 'a', 'b', 'c', 'a', 'b'];
+    // Правильні відповіді для 10 питань
+    const correctAnswers = ['a', 'a', 'b', 'c', 'a', 'b', 'c', 'a', 'b', 'd'];
     return answers.reduce((score, answer, index) => {
         return score + (answer === correctAnswers[index] ? 1 : 0);
     }, 0);
 }
 
 function showResults(score) {
+    console.log("Функція showResults викликана!"); // Перевірка виклику
     const percentage = Math.round((score / totalQuestions) * 100);
+    console.log("Відсоток:", percentage); // Перевірка відсотка
     const modal = document.createElement('div');
     modal.className = 'modal';
     modal.innerHTML = `
         <div class="modal-content">
-            <h2>Quiz Results</h2>
+            <h2>Результати тесту</h2>
             <div class="results-content">
                 <div class="score-circle">
                     <div class="score-number">${percentage}%</div>
-                    <div class="score-text">Score</div>
+                    <div class="score-text">Результат</div>
                 </div>
-                <p>You got ${score} out of ${totalQuestions} questions correct!</p>
-                <button onclick="restartQuiz()" class="quiz-btn next">Try Again</button>
+                <p>Ви відповіли правильно на ${score} з ${totalQuestions} питань!</p>
+                <button onclick="restartQuiz()" class="quiz-btn next">Спробувати ще раз</button>
             </div>
         </div>
     `;
@@ -157,12 +161,12 @@ function restartQuiz() {
     startQuiz();
 }
 
-// Event listeners
+// Обробники подій
 document.addEventListener('DOMContentLoaded', () => {
-    // Initialize quiz if we're on the tests tab
+    // Ініціалізація тесту, якщо ми на вкладці "Тести"
     initializeQuiz();
     
-    // Add tab change listener
+    // Додавання обробника зміни вкладки
     const testsTab = document.querySelector('.tab[onclick="selectTab(\'tests\')"]');
     if (testsTab) {
         const originalOnClick = testsTab.onclick;
