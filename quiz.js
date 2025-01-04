@@ -133,6 +133,14 @@ function showResults(score) {
     console.log("Відсоток:", percentage); // Перевірка відсотка
     const modal = document.createElement('div');
     modal.className = 'modal';
+    modal.style.position = 'fixed';
+    modal.style.top = '0';
+    modal.style.left = '0';
+    modal.style.width = '100%';
+    modal.style.height = '100%';
+    modal.style.display = 'flex';
+    modal.style.alignItems = 'center';
+    modal.style.justifyContent = 'center';
     modal.innerHTML = `
         <div class="modal-content">
             <h2>Результати тесту</h2>
