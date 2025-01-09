@@ -1,0 +1,23 @@
+{
+  "name": "hydroacoustic-stations-learning",
+  "version": "1.0.0",
+  "description": "Interactive Application for Learning the Installation of Hydroacoustic Stations",
+  "main": "script.js",
+  "scripts": {
+    "test": "jest --coverage",
+    "test:watch": "jest --watch"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.22.5",
+    "@babel/preset-env": "^7.22.5",
+    "babel-jest": "^29.5.0",
+    "jest": "^29.5.0",
+    "jest-environment-jsdom": "^29.5.0"
+  },
+  "jest": {
+    "testEnvironment": "jsdom",
+    "collectCoverage": true,
+    "coverageReporters": ["text", "lcov"],
+    "coverageDirectory": "coverage"
+  }
+}
